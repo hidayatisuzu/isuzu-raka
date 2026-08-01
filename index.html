@@ -187,24 +187,82 @@ color:#fff;
 font-size:13px;
 color:#eaffea;
 }
+
+/* ================= MOBILE MENU ================= */
+
+.menu-toggle{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:#fff;
+}
+
+@media(max-width:768px){
+
+nav{
+flex-wrap:wrap;
+}
+
+.menu-toggle{
+display:block;
+}
+
+nav ul{
+display:none;
+flex-direction:column;
+width:100%;
+margin-top:15px;
+background:#111;
+padding:20px 0;
+gap:15px;
+text-align:center;
+}
+
+nav ul.active{
+display:flex;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section-title h2{
+font-size:28px;
+}
+
+}
+ 
 </style>
 </head>
 <body>
 
 <header>
 <nav>
+
 <h2 class="logo">Dealer Isuzu Jakarta</h2>
-<ul>
+
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<ul id="menu">
+
 <li><a href="#home">Home</a></li>
 <li><a href="#produk">Produk</a></li>
 <li><a href="#keunggulan">Keunggulan</a></li>
 <li><a href="#pricelist">Pricelist</a></li>
 <li><a href="#faq">FAQ</a></li>
-<li><a href="#testimoni">Testimoni</a></li> 
+<li><a href="#testimoni">Testimoni</a></li>
 <li><a href="#tentang">Tentang</a></li>
 <li><a href="#kontak">Kontak</a></li>
 <li><a href="#privacy">Privacy Policy</a></li>
+
 </ul>
+
 </nav>
 </header>
 
@@ -581,6 +639,19 @@ aria-label="Chat WhatsApp Sales Raka">
 </div>
 
 </a>
+
+<script>
+
+const toggle=document.getElementById("menu-toggle");
+const menu=document.getElementById("menu");
+
+toggle.addEventListener("click",()=>{
+
+menu.classList.toggle("active");
+
+});
+
+</script>
  
 </body>
 </html>
